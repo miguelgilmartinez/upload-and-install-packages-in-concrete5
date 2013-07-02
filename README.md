@@ -7,7 +7,7 @@ It installs a link on the Dashboard. Log as Admin and click that link. Then clic
 and then press blue button. Now you can finish your installation by using Concrete5 "Add functionality" screen.
 
 
-How to get from GitHub and make it works
+How to get it from GitHub and make it works
 ========================================
 Just download this package from Github to a folder named "uploadandinstallpackages" in your Concrete5/packages folder,
 go to your "Add functionality" and install that new package. 
