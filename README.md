@@ -1,4 +1,4 @@
-upload-and-install-packages-in-concrete5
+Upload and Install Packages in Concrete5
 ========================================
 Install new packages in Concrete5 by just uploading your package (zip file) and pressing a button.
 Forget uploading files by FTP, uncompressing them, setting permissions, etc...
