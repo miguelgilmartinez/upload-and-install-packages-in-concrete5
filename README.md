@@ -2,9 +2,9 @@ upload-and-install-packages-in-concrete5
 ========================================
 Install new packages in Concrete5 by just uploading your package (zip file) and pressing a button.
 Forget uploading files by FTP, uncompressing them, setting permissions, etc...
-That package allows you to make that stuff by just uploading your package (zip file) and pressing a button. 
+That package allows you to make that stuff by just uploading your package (zip file) and pressing a button. 
 It installs a link on the Dashboard. Log as Admin and click that link. Then click "select file", select your package,
-and then press blue button. It's done. 
+and then press blue button. Now you can finish your installation by using Concrete5 "Add functionality" screen.
 
 
 How to get from GitHub and make it works
