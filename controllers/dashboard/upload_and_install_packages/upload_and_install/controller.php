@@ -44,14 +44,34 @@ class DashboardUploadAndInstallPackagesUploadAndInstallController extends Contro
 
     private function action_fileupload() {
         if (file_exists($_FILES['package']['tmp_name'])) {
+
+            // If the package dir already exists, then it is an update
+	        $pkg =basename($_FILES['package']['name'], '.zip');
+	        if (file_exists(DIR_PACKAGES.'/'.$pkg)){
+	        	$update = true;
+	        }
+
+			// Remove any old temporary file for the zip
+        	if (file_exists(DIR_BASE . '/files/tmp/' . $_FILES['package']['name'])){
+            	unlink(DIR_BASE . '/files/tmp/' . $_FILES['package']['name']);
+            }
+
+            // Move the new zip into the c5 temp area
             rename($_FILES['package']['tmp_name'], DIR_BASE . '/files/tmp/' . $_FILES['package']['name']);
+
+            // Install
             Loader::library('myzip', $this->getCollectionObject()->getPackageHandle());
             $archive = new MyZIP();
-            $archive->install(str_replace('.zip', '', $_FILES['package']['name']), true);
+          	$archive->install(str_replace('.zip', '', $_FILES['package']['name']), true);
 
             //TO DO Apply right permissions if needed rwx------
 
-            $this->redirect('/index.php/dashboard/extend/');
+            // go to update or install pages, whichever is most relevant
+            if ($update){
+            	$this->redirect('/index.php/dashboard/extend/update/');
+            } else {
+            	$this->redirect('/index.php/dashboard/extend/');
+            }
         }
         else {
             $this->set('status', '<div class = "alert alert-error">' . t('ERROR. File not uploaded') . '</div>');
