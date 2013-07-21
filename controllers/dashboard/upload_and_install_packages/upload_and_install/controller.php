@@ -68,9 +68,9 @@ class DashboardUploadAndInstallPackagesUploadAndInstallController extends Contro
 
             // go to update or install pages, whichever is most relevant
             if ($update){
-            	$this->redirect('/index.php/dashboard/extend/update/');
+            	$this->redirect('/dashboard/extend/update/');
             } else {
-            	$this->redirect('/index.php/dashboard/extend/');
+            	$this->redirect('/dashboard/extend/');
             }
         }
         else {
