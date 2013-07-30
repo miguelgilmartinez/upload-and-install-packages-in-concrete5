@@ -35,7 +35,7 @@ class DashboardUploadAndInstallPackagesUploadAndInstallController extends Contro
             $this->set('status ', '<span class = "alert alert-error">' . t('ERROR. Empty file"') . '</span>');
             return false;
         }
-        if ($_FILES['package']['type'] != 'application/zip') {
+        if ($_FILES['package']['type'] != 'application/zip' && $_FILES['package']['type'] != 'application/x-zip-compressed') {
             $this->set('status', '<div class=  "alert alert-error">' . t('ERROR. File MUST BE a valid ZIP file') . '</div>');
             return false;
         }
