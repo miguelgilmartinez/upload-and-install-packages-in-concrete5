@@ -4,12 +4,15 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 
 /**
  *  @author arequaldev@gmail.com
+ * 
+ *  https://github.com/miguelgilmartinez/upload-and-install-packages-in-concrete5
+ * 
  */
 class UploadandinstallpackagesPackage extends Package {
 
     protected $pkgHandle = 'uploadandinstallpackages';
     protected $appVersionRequired = '5.6.1';
-    protected $pkgVersion = '0.9.4';
+    protected $pkgVersion = '0.9.4.2';
 
     public function getPackageDescription() {
         return t('Uploads and installs packages by Administrator. Forget uploading packages by FTP, uncompressing them, etc');
